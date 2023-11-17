@@ -37,6 +37,11 @@
           background-color: rgba(0,0,0,0);
         }
         
+        #controlMenu {
+          bottom: 0px;
+          right: 0px;
+          display: none;
+        }
         
         
         </style>
@@ -46,7 +51,7 @@
     <div class="v6_269">
         <div class="v6_270">
             <ul>
-                <li><a href="../../index.html">🎓 McGill University</a></li>
+                <li><a href="../index.html">🎓 McGill University</a></li>
                 <li style="float:right"><a class="active" href="./access.html"><i class="fa fa-gear"
                             style="font-size:30px; color:white;"></i></a></li>
             </ul>
@@ -54,15 +59,15 @@
         <div class="v6_273"><span class="v6_274">We are here to change settings for improve your accessibility
             </span><span class="v6_275">Coming soon ...</span><span class="v6_276">Change color
                 settings</span><span class="v6_277">Coming soon ...</span>
-            <div class="v6_278">
-                <div class="v6_279"></div><span class="v6_280">?</span>
-            </div>
-            <div class="v6_281" onclick="myFunction()"></div>
+            <div class="v6_278" onclick="myFunction2()">
+                <div class="v6_279"></div><span class="v6_280">?</span> 
+            </div><p id="hint" style="display:none; top:239px; left:780px; position: absolute;">For people with colour blindness</p>
+            <a onclick="myFunction()"><div class="v6_281"></div></a>
             <div class="v6_282"></div>
             <div class="v6_283"></div>
         </div>
 
-        <div class="v6_46" id="controlMenu"><span class="v6_47">Color Adjuster 🎨</span>
+        <div class="v6_46" id="controlMenu" style="display:none;"><span class="v6_47">Color Adjuster 🎨</span>
           <div class="v6_231"><span class="v6_230">50%</span>
               <div class="v6_229"></div>
           </div>
@@ -148,7 +153,16 @@
     <script>
       function myFunction() {
         var x = document.getElementById("controlMenu");
-        if (x.style.display === "none") {
+        if (x.style.display == "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function myFunction2() {
+        var x = document.getElementById("hint");
+        if (x.style.display == "none") {
           x.style.display = "block";
         } else {
           x.style.display = "none";
